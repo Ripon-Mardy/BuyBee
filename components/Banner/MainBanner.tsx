@@ -1,141 +1,128 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
 } from '@/components/ui/carousel';
-import { Button } from '@/components/ui/button';
-import { CarouselApi } from '@/components/ui/carousel';
 
 import banner1 from '@/public/banner.jpg';
 
-
 const slides = [
-    {
-        title: 'Up to 15% off',
-        highlight: 'Voucher',
-        description: 'On all types of products',
-        image: banner1,
-        buttonText: 'Shop Now',
-    },
-    {
-        title: 'Up to 15% off',
-        highlight: 'Voucher',
-        description: 'On all types of products',
-        image: banner1,
-        buttonText: 'Shop Now',
-    },
-    {
-        title: 'Up to 15% off',
-        highlight: 'Voucher',
-        description: 'On all types of products',
-        image: banner1,
-        buttonText: 'Shop Now',
-    },
+  {
+    title: 'Up to 15% off',
+    highlight: 'Voucher',
+    description: 'On all types of products',
+    image: banner1,
+    buttonText: 'Shop Now',
+  },
+  {
+    title: 'Up to 15% off',
+    highlight: 'Voucher',
+    description: 'On all types of products',
+    image: banner1,
+    buttonText: 'Shop Now',
+  },
+  {
+    title: 'Up to 15% off',
+    highlight: 'Voucher',
+    description: 'On all types of products',
+    image: banner1,
+    buttonText: 'Shop Now',
+  },
 ];
 
 export default function MainBanner() {
-    const [api, setApi] = useState<CarouselApi | null>(null);
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [isHovered, setIsHovered] = useState(false);
-
-    // Track active slide
-    useEffect(() => {
-        if (!api) return;
-
-        setActiveIndex(api.selectedScrollSnap());
-
-        api.on("select", () => {
-            setActiveIndex(api.selectedScrollSnap());
-        });
-    }, [api]);
-
-    // Auto slide
-    useEffect(() => {
-        if (!api || isHovered) return;
-
-        const interval = setInterval(() => {
-            api.scrollNext();
-        }, 4000);
-
-        return () => clearInterval(interval);
-    }, [api, isHovered]);
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
 
-    return (
-        <section className="w-full relative">
-            <Carousel
-                className="w-full"
-                setApi={api}
-                opts={{
-                    loop: true,
-                    align: 'start',
-                }}
-            >
-                <CarouselContent>
-                    {slides.map((slide, index) => (
-                        <CarouselItem key={index} className="relative h-full">
-                            <div className="relative w-full aspect-[21/9] md:aspect-[16/6] lg:aspect-[21/7] overflow-hidden">
-                                <Image
-                                    src={slide.image}
-                                    alt={slide.title}
-                                    fill
-                                    className="object-cover"
-                                />
+  useEffect(() => {
+    if (!api) return;
 
-                                {/* Text & Button Overlay */}
-                                <div className='flex items-start justify-start flex-col ml-[78px] mt-[91px]'>
-                                    <h2 className="text-5xl text-[#FF36BC] font-medium tracking-tight drop-shadow-lg">
-                                        {slide.title}
-                                        <span className='block text-center'>
-                                            {slide.highlight}
-                                        </span>
-                                    </h2>
+    setActiveIndex(api.selectedScrollSnap());
 
-                                    {/* Description */}
-                                    <p className="mt-3 md:mt-5 text-white text-base sm:text-lg md:text-xl lg:text-2xl font-medium opacity-90 max-w-2xl">
-                                        {slide.description}
-                                    </p>
-                                    <div className='ml-20 mt-10'>
-                                        <button className=" bg-[#220AF5] w-[140px] h-[50px] rounded-[24px]  text-center text-white font-medium opacity-90 max-w-2xl">
-                                            {slide.buttonText}
-                                        </button>
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
+    api.on('select', () => {
+      setActiveIndex(api.selectedScrollSnap());
+    });
+  }, [api]);
 
 
 
-                        </CarouselItem>
-                    ))}
+  
+  useEffect(() => {
+    if (!api || isHovered) return;
 
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 4000);
 
-                </CarouselContent>
-            </Carousel>
+    return () => clearInterval(interval);
+  }, [api, isHovered]);
 
+  return (
+    <section
+      className="relative w-full"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <Carousel
+        className="w-full"
+        setApi={setApi}
+        opts={{ loop: true }}
+      >
+        <CarouselContent>
+          {slides.map((slide, index) => (
+            <CarouselItem key={index}>
+              <div className="relative w-full aspect-[21/9] md:aspect-[16/6] overflow-hidden">
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  className="object-cover"
+                  priority={index === 0}
+                />
 
-            {/* dots  */}
-            <div className="flex justify-center gap-2 mt-10 absolute left-1/2 top-72">
-                {slides.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => api?.scrollTo(index)}
-                        className={`h-2 w-2 bg-white cursor-pointer rounded-full transition-all opacity-90`}
-                    />
-                ))}
-            </div>
+                {/* Overlay */}
+                <div className="absolute left-6 md:left-16 top-1/2 -translate-y-1/2">
+                  <h2 className="text-4xl md:text-5xl text-[#FF36BC] font-medium leading-tight">
+                    {slide.title}
+                    <span className="block">{slide.highlight}</span>
+                  </h2>
 
+                  <p className="mt-4 text-white text-lg md:text-xl">
+                    {slide.description}
+                  </p>
 
+                  <button className="mt-6 bg-[#220AF5] px-8 py-3 rounded-full text-white font-medium">
+                    {slide.buttonText}
+                  </button>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
 
-
-        </section>
-    );
+      {/* Dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => api?.scrollTo(index)}
+            className={`h-2 w-2 rounded-full transition-all
+              ${
+                activeIndex === index
+                  ? 'bg-white w-4'
+                  : 'bg-white/50'
+              }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }
