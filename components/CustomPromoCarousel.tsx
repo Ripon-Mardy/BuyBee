@@ -1,4 +1,4 @@
-// components/ui/CustomPromoCarousel.tsx
+
 "use client";
 
 import * as React from "react";
@@ -7,10 +7,9 @@ import useEmblaCarousel, {
   EmblaEventType,
 } from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils"; // ← shadcn utils (or your own classNames helper)
+import { cn } from "@/lib/utils";
 
-// ────────────────────────────────────────────────
-// Type for each slide (customize as you need)
+
 type Slide = {
   title: string;
   subtitle: string;
@@ -78,9 +77,9 @@ export function CustomPromoCarousel() {
   }, [emblaApi, onInit, onSelect]);
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto">
+    <div className="relative w-full mx-auto">
       {/* ─── Viewport & Container ─── */}
-      <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+      <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex touch-pan-y">
           {slides.map((slide, index) => (
             <div

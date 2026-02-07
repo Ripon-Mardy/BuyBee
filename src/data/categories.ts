@@ -28,14 +28,6 @@ export const categories: category[] = [
   {
     name: "Electronics",
     hasSubmenu: true,
-    subCategories: [
-      { name: "Smartphones" },
-      { name: "Laptops & Tablets" },
-      { name: "Audio" },
-      { name: "Cameras" },
-      { name: "Gaming" },
-      { name: "Accessories" },
-    ],
   },
   {
     name: "Home & Lifestyle",
@@ -48,24 +40,10 @@ export const categories: category[] = [
   {
     name: "Sports & Outdoor",
     hasSubmenu: true,
-    subCategories: [
-      { name: "Fitness Equipment" },
-      { name: "Team Sports" },
-      { name: "Camping & Hiking" },
-      { name: "Cycling" },
-      { name: "Swimming" },
-    ],
   },
   {
     name: "Baby's & Toys",
     hasSubmenu: true,
-    subCategories: [
-      { name: "Baby Clothing" },
-      { name: "Toys" },
-      { name: "Baby Gear" },
-      { name: "Feeding" },
-      { name: "Diapering" },
-    ],
   },
   {
     name: "Groceries & Pets",
@@ -73,13 +51,6 @@ export const categories: category[] = [
   },
   {
     name: "Health & Beauty",
-    hasSubmenu: true,
-    subCategories: [
-      { name: "Skincare" },
-      { name: "Makeup" },
-      { name: "Haircare" },
-      { name: "Fragrances" },
-      { name: "Personal Care" },
-    ],
+    hasSubmenu: false,
   },
 ];
