@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from "next/link";
 
 import { ChevronRight } from 'lucide-react';
-import { CustomPromoCarousel } from "../CustomPromoCarousel";
 
 const CategorySidebar = () => {
     const [openCategory, setOpenCategory] = useState<string | null>(null)
@@ -14,7 +13,7 @@ const CategorySidebar = () => {
     }
 
   return (
-    <div className="w-[229px]">
+    <div className="container mx-auto">
 
         <div className=" bg-white space-y-3 mt-2">
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <div className="max-w-[1340px] mx-auto py-5">
+    <div className="container mx-auto py-5">
       <div className='flex items-center gap-2'>
 
         <h2 className='text-[#1163CF] font-bold text-2xl leading-6 w-[229px]'>BuyBee</h2>
@@ -19,13 +19,13 @@ const Navbar = () => {
             <User className='w-6 h-6' />
             <Link href={'#'}>sign up</Link>
             <span>/</span>
-            <Link href={'#'}>Sign In</Link>
+            <Link href={'#'}>Sign In</Link> 
           </div>
 
           <div className='flex items-center justify-center gap-1'>
             <ShoppingCart className='w-6 h-6' />
             <span>Cart</span>
-          </div>
+          </div>   
 
           <Heart className='w-6 h-6'/>
             

@@ -53,13 +53,13 @@ export default function MainBanner() {
 
 
 
-  
+
   useEffect(() => {
     if (!api || isHovered) return;
 
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 4000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, [api, isHovered]);
