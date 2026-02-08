@@ -4,6 +4,7 @@ import "./globals.css";
 import TopHeader from "@/components/layout/TopHeader";
 import Navbar from "@/components/layout/Navbar";
 import BannerMenus from "@/components/Banner/BannerMenus";
+import Footer from "@/components/layout/Footer";
 
 
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Navbar/>
           <BannerMenus/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

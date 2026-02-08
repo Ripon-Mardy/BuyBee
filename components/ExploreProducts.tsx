@@ -1,38 +1,39 @@
 import Image from 'next/image';
 
-import { Funnel , ChevronDown, ShoppingCart } from 'lucide-react';
+import { Funnel, ChevronDown, ShoppingCart, Star } from 'lucide-react';
 
 import { products } from '@/src/data/products';
 
 const ExploreProducts = () => {
-  return (
-    <div className='mt-20'>
+    return (
+        <div className='mt-20'>
 
-        <div className='flex items-center justify-between gap-5'>
+            <div className='flex items-center justify-between gap-5'>
+                <div>
+                    <h1 className='text-3xl font-semibold'>Explore Our Products</h1>
+                    <div className='bg-[#1163CF] w-[282px] h-[11px] mt-2'></div>
+                </div>
+
+                <div className='flex items-center justify-center gap-20'>
+                    <div className='flex items-center justify-center gap-2 text-sm'>
+                        <Funnel className='w-4 h-4' />
+                        <span>Filters</span>
+                    </div>
+                    <div className='flex items-center justify-between gap-5 text-sm'>
+                        <h2>Sort By</h2>
+                        <ChevronDown />
+                    </div>
+                </div>
+            </div>
+
+
+            {/* products  */}
             <div>
-                <h1 className='text-3xl font-semibold'>Explore Our Products</h1>
-                <div className='bg-[#1163CF] w-[282px] h-[11px] mt-2'></div>
-            </div>
-
-            <div className='flex items-center justify-center gap-20'>
-                <div className='flex items-center justify-center gap-2 text-sm'>
-                    <Funnel className='w-4 h-4'/>
-                    <span>Filters</span>
-                </div>
-                <div className='flex items-center justify-between gap-5 text-sm'>
-                    <h2>Sort By</h2>
-                    <ChevronDown/>
-                </div>
-            </div>
-        </div>
-
-
-        {/* products  */}
-        <div className='grid grid-cols-4 gap-10 my-10'>
-            { products?.map((item, index) => (
+                <div className='grid grid-cols-4 gap-10 my-10'>
+                    {products?.map((item, index) => (
                         <div key={index} className="">
 
-                            <div className="relative  rounded"> 
+                            <div className="relative  rounded">
                                 {/* discount  */}
                                 {item?.discount && (
                                     <div className="absolute top-3 left-3 z-10 bg-red-500 text-white text-xs md:text-sm font-bold px-2.5 py-1 rounded">
@@ -63,19 +64,31 @@ const ExploreProducts = () => {
                                         )}
                                     </div>
                                 </div>
+                                {/* star  */}
+                                <div className='mt-2 flex items-center justify-start gap-2'>
+                                    <div className='flex items-start justify-start gap-1'>
+                                        <Star className='w-3 h-3 text-yellow-500' /> <Star className='w-3 h-3 text-yellow-500' /> <Star className='w-3 h-3 text-yellow-500' /> <Star className='w-3 h-3 text-yellow-500' /> <Star className='w-3 h-3 text-yellow-500' />
+                                    </div>
+                                    <span className='text-sm opacity-50'> (65) </span>
+                                </div>
                             </div>
 
 
 
                         </div>
                     ))}
+                </div>
+
+              <div className='text-center'>
+                 <button className="bg-[#0F59B9] rounded py-4 px-12 text-white cursor-pointer">View All</button>
+              </div>
+            </div>
+
+
+
+
         </div>
-
-
-
-
-    </div>
-  )
+    )
 }
 
 export default ExploreProducts
