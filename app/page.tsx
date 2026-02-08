@@ -1,5 +1,9 @@
 import CategorySidebar from "@/components/Banner/CategorySidebar";
 import MainBanner from "@/components/Banner/MainBanner";
+import ElectoricBrands from "@/components/ElectoricBrands";
+import ExploreProducts from "@/components/ExploreProducts";
+import NewArrival from "@/components/NewArrival";
+import Products from "@/components/Products";
 import ShopFromCategory from "@/components/ShopFromCategory";
 
 
@@ -16,7 +20,10 @@ export default function Home() {
     </div>
 
     <ShopFromCategory/>
-
+    <ElectoricBrands/>
+    <Products/>
+    <NewArrival/>
+    <ExploreProducts/>
 
     </div>
   );

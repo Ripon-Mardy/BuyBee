@@ -1,10 +1,8 @@
 'use client'
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 
 import { shopCategories } from "@/src/data/shopCategoris"
-import { categories } from '@/src/data/categories';
 
 const ShopFromCategory = () => {
     return (
@@ -34,7 +32,7 @@ const ShopFromCategory = () => {
                     </div>
 
                     <CarouselContent className='mt-10 h-[145px] '>
-                        {shopCategories?.map((cat, index) => {
+                        {shopCategories?.map((cat, index) => {  
                             const Icon = cat?.icon;
                             return (
                                 <CarouselItem key={index} className='basis-1/2 md:basis-1/6 gap-10'>
