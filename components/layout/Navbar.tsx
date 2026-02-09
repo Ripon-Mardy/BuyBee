@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className='flex items-center justify-between gap-5 w-full xl:hidden'>
         <Menu onClick={() => setOpenMobileSidebar(!openMobileSidebar)} />
         <h2 className='text-[#1163CF] font-bold text-2xl leading-6'>BuyBee</h2>
-        <ShoppingCart />
+        <Link href={'/cart'}><ShoppingCart /></Link>
       </div>
 
 
