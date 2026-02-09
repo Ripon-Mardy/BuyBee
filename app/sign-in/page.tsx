@@ -13,7 +13,7 @@ const page = () => {
             <form className="w-full space-y-10">
                 <input type="text" className="w-full outline-none border-b border-gray-300 py-2" placeholder="Email or Phone number" />
                 <input type="password" className="w-full outline-none border-b border-gray-300 py-2" placeholder="Password" />
-                <div className="flex gap-10">
+                <div className="flex flex-wrap gap-10">
                     <button className="bg-[#1163CF] py-4 text-white rounded w-52">Log in</button>
                     <button className="text-red-500">Forget password?</button>
                 </div>
