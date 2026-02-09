@@ -60,7 +60,7 @@ const Page = () => {
         {/* CART ITEMS */}
         <div className="lg:col-span-2 space-y-4">
 
-          <div className="grid grid-cols-4 font-semibold border-b pb-3 text-sm">
+          <div className="grid grid-cols-4 font-semibold border-b pb-3 text-lg">
             <span>Product Details</span>
             <span className="text-center">Quantity</span>
             <span className="text-center">Price</span>
@@ -113,7 +113,7 @@ const Page = () => {
 
         {/* SUMMARY */}
        <div>
-         <div className="border p-6 rounded-md h-fit mt-12">
+         <div className="border p-6 rounded-md h-fit mt-16">
           <h2 className="font-semibold text-lg mb-4">Total</h2>
 
           <div className="flex justify-between mb-2 border-b border-gray-200 pb-3">
@@ -149,7 +149,7 @@ const Page = () => {
       {/* buttons  */}
        <div className="flex items-center justify-between gap-2 w-full">
           <button  className="bg-[#1163CF] py-4 text-white rounded w-52 mt-10">Return to shop </button>
-        <button  className="bg-[#1163CF] py-4 text-white rounded w-52 mt-10">Update Cart </button>
+        <button  className="bg-[#1163CF] py-4 text-white rounded w-52 mt-10 mr-24">Update Cart </button>
        </div>
 
 
