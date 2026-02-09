@@ -210,7 +210,7 @@ const page = () => {
 
             <div className="flex items-center justify-start gap-10">
               <Image src={star} width={20} height={20} alt="star" />
-              <div className="max-w-[380px]">
+              <div className="w-[380px]">
                 <div className="w-[52px] h-[15px] rounded-md bg-[#F5C90A]"></div>
               </div>
               <span>4</span>
@@ -218,6 +218,9 @@ const page = () => {
           </div>
         </div>
       </div>
+
+
+
 
       <div className="mt-6">
         <div className="flex items-center justify-between gap-2 border border-[#0B0B0B] rounded px-4 h-14.5">
@@ -273,6 +276,9 @@ const page = () => {
           </div>
         </div>
       </div>
+
+
+
 
       {/* products  */}
       <div className="my-20">
