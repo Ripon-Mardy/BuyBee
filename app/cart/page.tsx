@@ -81,7 +81,7 @@ const Page = () => {
                   alt={item.name}
                   className="rounded"
                 />
-                <p className="font-medium">{item.name}</p>
+                <p className="font-medium text-xs hidden md:block">{item.name}</p>
               </div>
 
               {/* Quantity */}

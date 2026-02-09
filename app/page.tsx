@@ -12,8 +12,8 @@ export default function Home() {
     <div className="container mx-auto">
 
 
-    <div className="flex">
-     <div className="w-[237px]">
+    <div className="md:flex">
+     <div className="w-[237px] hidden xl:block">
        <CategorySidebar/>
      </div>
         <MainBanner/>

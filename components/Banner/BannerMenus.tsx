@@ -6,7 +6,8 @@ import { menus } from '@/src/data/menus';
 
 const BannerMenus = () => {
   return (
-    <div className="max-w-[1340px] mx-auto">
+   <div className='border border-gray-200 hidden xl:block'>
+     <div className="max-w-[1340px] mx-auto">
 
       <div className='h-[38px] flex items-center justify-center'>
 
@@ -18,7 +19,7 @@ const BannerMenus = () => {
         {/* menu  */}
         <div className='max-w-[879px] mx-auto space-x-6'>
           {menus.map((item, index) => (
-            <Link key={index} href={'#'}> {item?.name} </Link>
+            <Link key={index} href={item?.path}> {item?.name} </Link>
           ))}
         </div>
 
@@ -27,6 +28,7 @@ const BannerMenus = () => {
 
 
     </div>
+   </div>
   )
 }
 

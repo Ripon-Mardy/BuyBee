@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Funnel, ChevronDown, ShoppingCart, Star } from 'lucide-react';
 
@@ -6,20 +7,20 @@ import { products } from '@/src/data/products';
 
 const ExploreProducts = () => {
     return (
-        <div className='mt-20'>
+        <div className='mt-20 px-3 md:px-0'>
 
-            <div className='flex items-center justify-between gap-5'>
+            <div className='flex flex-wrap items-center justify-between md:gap-5'>
                 <div>
-                    <h1 className='text-3xl font-semibold'>Explore Our Products</h1>
-                    <div className='bg-[#1163CF] w-[282px] h-[11px] mt-2'></div>
+                    <h1 className='text-xl md:text-3xl font-semibold'>Explore Our Products</h1>
+                    <div className='bg-[#1163CF] w-full md:w-[282px] h-1 md:h-[11px] mt-1 md:mt-2'></div>
                 </div>
 
-                <div className='flex items-center justify-center gap-20'>
+                <div className='flex items-center justify-center gap-5 md:gap-20'>
                     <div className='flex items-center justify-center gap-2 text-sm'>
                         <Funnel className='w-4 h-4' />
                         <span>Filters</span>
                     </div>
-                    <div className='flex items-center justify-between gap-5 text-sm'>
+                    <div className='flex items-center justify-between gap-1 md:gap-5 text-sm'>
                         <h2>Sort By</h2>
                         <ChevronDown />
                     </div>
@@ -29,7 +30,7 @@ const ExploreProducts = () => {
 
             {/* products  */}
             <div>
-                <div className='grid grid-cols-4 gap-10 my-10'>
+                <div className='grid grid-cols-2  xl:grid-cols-4 gap-10 my-10'>
                     {products?.map((item, index) => (
                         <div key={index} className="">
 
@@ -48,10 +49,10 @@ const ExploreProducts = () => {
                                     </div>
 
                                 </div>
-                                <div className="flex items-center justify-center gap-2 cursor-pointer text-white bg-[#1163CF] font-normal h-[41px] text-sm rounded-b">
+                                <Link href={'/product-details'} className="flex items-center justify-center gap-2 cursor-pointer text-white bg-[#1163CF] font-normal h-[41px] text-sm rounded-b">
                                     <ShoppingCart className="w-5 h-5" />
-                                    <button> {item?.buttonText} </button>
-                                </div>
+                                    <button className='cursor-pointer'> {item?.buttonText} </button>
+                                </Link>
 
                                 <div className="mt-4 space-y-1">
                                     <h2 className="text-[16px] font-medium"> {item?.name} </h2>
@@ -80,7 +81,7 @@ const ExploreProducts = () => {
                 </div>
 
               <div className='text-center'>
-                 <button className="bg-[#0F59B9] rounded py-4 px-12 text-white cursor-pointer">View All</button>
+                 <button className="bg-[#0F59B9] rounded text-sm md:[text-16px] py-2 md:py-4 px-12 text-white cursor-pointer">View All</button>
               </div>
             </div>
 

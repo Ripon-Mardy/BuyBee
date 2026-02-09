@@ -2,21 +2,27 @@ import { menu } from "../types/menu";
 
 export const  menus: menu[] = [
     {
-        name : 'Home'
+        name : 'Home',
+        path : '/'
     },
     {
-        name : "Contact"
+        name : "Contact",
+        path : '/contact'
     },
     {
-        name : "Products"
+        name : "Products",
+        path : '/products'
     },
     {
-        name : "Hot Offers"
+        name : "Hot Offers",
+        path : '/hot-offers'
     },
     {
-        name : "Combo"
+        name : "Combo",
+        path : '/combo'
     },
     {
-        name : "Clearance"
+        name : "Clearance",
+        path : '/clearance'
     }
 ]

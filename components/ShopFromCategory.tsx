@@ -6,13 +6,13 @@ import { shopCategories } from "@/src/data/shopCategoris"
 
 const ShopFromCategory = () => {
     return (
-        <div className='container mx-auto mt-[100px] pb-10'>
+        <div className='container mx-auto mt-[100px] pb-10 px-3 xl:px-0'>
 
 
             <div className='relative flex items-center justify-between gap-2'>
                 <div>
-                    <h2 className='text-3xl font-semibold'>Shop From <span className='text-[#1163CF]'>Top Catagory</span></h2>
-                    <div className='w-[330px] h-[11px] bg-[#1163CF] mt-[15px]'></div>
+                    <h2 className='text-xl md:text-3xl font-semibold'>Shop From <span className='text-[#1163CF]'>Top Catagory</span></h2>
+                    <div className='md:w-[330px] h-1 md:h-[11px] bg-[#1163CF] mt-1 md:mt-[15px]'></div>
                 </div>
 
                 <div className='absolute right-0 left-0 flex'>
@@ -26,9 +26,9 @@ const ShopFromCategory = () => {
             <div>
                 <Carousel>
 
-                     <div className='flex absolute right-20 -top-10'>
-                         <CarouselPrevious className='w-[46px] h-[46px]' />
-                        <CarouselNext className='w-[46px] h-[46px]'/>
+                     <div className='flex absolute right-20 -top-5 md:-top-10'>
+                         <CarouselPrevious className='md:w-[46px] md:h-[46px]' />
+                        <CarouselNext className='md:w-[46px] md:h-[46px]'/>
                     </div>
 
                     <CarouselContent className='mt-10 h-[145px] '>

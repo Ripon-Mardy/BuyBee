@@ -78,7 +78,7 @@ export default function MainBanner() {
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <div className="relative w-full aspect-[21/9] md:aspect-[16/6] overflow-hidden">
+              <div className="relative w-full h-[300px] md:h-auto aspect-[21/9] md:aspect-[16/6] overflow-hidden">
                 <Image
                   src={slide.image}
                   alt={slide.title}

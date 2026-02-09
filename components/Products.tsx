@@ -1,23 +1,24 @@
 
 import Image from "next/image"
+import Link from "next/link";
 import { products } from "@/src/data/products"
 
 import { ShoppingCart } from 'lucide-react';
 
 const Products = () => {
     return (
-        <div className="py-10">
+        <div className="py-10 px-3 md:px-0">
 
-            <div className="flex items-center justify-between gap-4">
-                <div>
-                    <h2 className="text-black font-semibold text-3xl">Best Selling Products</h2>
-                    <div className="bg-[#1163CF] w-[290px] h-[11px] mt-4"></div>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+                <div> 
+                    <h2 className="text-black font-semibold text-xl md:text-3xl">Best Selling Products</h2>
+                    <div className="bg-[#1163CF] md:w-[290px] h-1 md:h-[11px] mt-1 md:mt-4"></div>
                 </div>
-                <button className="bg-[#0F59B9] rounded py-4 px-12 text-white cursor-pointer">View All</button>
-            </div>
+                <button className="bg-[#0F59B9] rounded py-2 text-sm md:text-[16px] md:py-4 px-12 text-white cursor-pointer">View All</button>
+            </div> 
 
             {/* products  */}
-            <div className="mt-[100px] grid grid-cols-4 gap-10">
+            <div className="mt-5 md:mt-[100px] grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-10">
 
 
                    { products?.slice(0, 4).map((item, index) => (
@@ -38,10 +39,10 @@ const Products = () => {
                                     </div>
 
                                 </div>
-                                <div className="flex items-center justify-center gap-2 cursor-pointer text-white bg-[#1163CF] font-normal h-[41px] text-sm rounded-b">
+                                <Link href={'/product-details'} className="flex items-center justify-center gap-2 cursor-pointer text-white bg-[#1163CF] font-normal h-[41px] text-sm rounded-b">
                                     <ShoppingCart className="w-5 h-5" />
-                                    <button> {item?.buttonText} </button>
-                                </div>
+                                    <button className="cursor-pointer"> {item?.buttonText} </button>
+                                </Link>
 
                                 <div className="mt-4 space-y-1">
                                     <h2 className="text-[16px] font-medium"> {item?.name} </h2>
