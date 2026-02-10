@@ -6,7 +6,8 @@ import { Search, User, ShoppingCart, Heart, Menu, X  } from 'lucide-react';
 import Link from 'next/link';
 
 
-
+import { categories } from '@/src/data/categories';
+console.log('categories', categories)
 
 
 const Navbar = () => {
@@ -79,10 +80,19 @@ const Navbar = () => {
           </div>  
 
           {/* menu and category  */}
-          <div className='my-2 flex items-center justify-around'>
+          <div className='my-2 mt-2 flex items-center justify-around'>
             {/* menu  */}
-            <button className='bg-gray-200 w-full py-2 text-sm text-gray-500'>Menu</button>
             <button className='w-full bg-gray-300 py-2 text-sm text-gray-500'>Category</button>
+            <button className='bg-gray-200 w-full py-2 text-sm text-gray-500'>Menu</button>
+          </div>
+
+          {/* categories  */}
+          <div className='space-y-3 mt-2'>
+            {categories?.map((cat, index) => (
+             <div key={index}>
+              <button className='text-sm'> {cat?.name} </button>
+             </div>
+            ))}
           </div>
 
         </div>
