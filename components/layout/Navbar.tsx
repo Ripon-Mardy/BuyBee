@@ -2,16 +2,20 @@
 
 import { useState } from 'react';
 
-import { Search, User, ShoppingCart, Heart, Menu, X  } from 'lucide-react';
+import { Search, User, ShoppingCart, Heart, Menu, X , ChevronRight  } from 'lucide-react';
 import Link from 'next/link';
 
 
 import { categories } from '@/src/data/categories';
-console.log('categories', categories)
 
 
 const Navbar = () => {
-  const [openMobileSidebar, setOpenMobileSidebar] = useState<boolean>(false);
+  const [openMobileSidebar, setOpenMobileSidebar] = useState<boolean>(true);
+  const [openSubmenuCategory, setOpenSubmenuCategory] = useState<string | null>(null);
+
+  const toggleMobileCategory = (name: string) => {
+   setOpenSubmenuCategory(openSubmenuCategory === name ? null : name)
+  }
 
   return (
    <div>
@@ -20,7 +24,7 @@ const Navbar = () => {
       {/* mobile responsive  */}
       <div className='flex items-center justify-between gap-5 w-full xl:hidden'>
         <Menu onClick={() => setOpenMobileSidebar(!openMobileSidebar)} />
-        <h2 className='text-[#1163CF] font-bold text-2xl leading-6'>BuyBee</h2>
+        <Link href={'/'} className='text-[#1163CF] font-bold text-2xl leading-6'>BuyBee</Link>
         <Link href={'/cart'}><ShoppingCart /></Link>
       </div>
 
@@ -90,7 +94,24 @@ const Navbar = () => {
           <div className='space-y-3 mt-2'>
             {categories?.map((cat, index) => (
              <div key={index}>
-              <button className='text-sm'> {cat?.name} </button>
+              <div className='flex items-center justify-between gap-2 border-b border-gray-100 py-1'>
+              <button onClick={() => toggleMobileCategory(cat?.name)} className='text-sm'> {cat?.name} </button>
+              {cat?.hasSubmenu && (
+                <ChevronRight className='w-4 h-4 text-gray-700'/>
+              )}
+             </div>
+
+             {/* submenu  */}
+             <div>
+              {cat?.hasSubmenu && openSubmenuCategory === cat?.name && (
+                <div>
+                  {cat?.subCategories?.map((subCat, index) => (
+                    <button key={index}> {subCat?.name} </button>
+                  ))}
+                </div>
+              )}
+             </div>
+
              </div>
             ))}
           </div>
