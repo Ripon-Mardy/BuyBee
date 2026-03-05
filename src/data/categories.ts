@@ -27,7 +27,7 @@ export const categories: category[] = [
   },
   {
     name: "Electronics",
-    hasSubmenu: true,
+    hasSubmenu: false,
   },
   {
     name: "Home & Lifestyle",
@@ -39,11 +39,11 @@ export const categories: category[] = [
   },
   {
     name: "Sports & Outdoor",
-    hasSubmenu: true,
+    hasSubmenu: false,
   },
   {
     name: "Baby's & Toys",
-    hasSubmenu: true,
+    hasSubmenu: false,
   },
   {
     name: "Groceries & Pets",
