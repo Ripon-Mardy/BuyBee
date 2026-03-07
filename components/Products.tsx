@@ -34,7 +34,7 @@ const Products = () => {
 
 
                                 <div className=" aspect-square flex items-center justify-center flex-col bg-[#F5F5F5]">
-                                    <div className="w-[190px]">
+                                    <div className="w-47.5">
                                         <Image src={item?.image} width={100} height={100} layout="responsive" className="w-full" alt={item?.name} />
                                     </div>
 
